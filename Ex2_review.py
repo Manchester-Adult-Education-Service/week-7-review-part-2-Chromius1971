@@ -9,8 +9,6 @@
 # You may discuss and work with your classmates,
 # but each learner must submit their own file individually.
 # -------------------------------------------
-
-
 # Task 1: Even or Odd
 # -------------------------------------------
 print("-------------------------------------------\n"
@@ -27,6 +25,11 @@ print("-------------------------------------------\n"
 #
 # Write your code below:
 
+number = int(input("Choose a number between 1 and 50: "))
+if number %2 == 0:
+    print(f"{number} is even.")
+else:
+    print(f"{number} is odd")
 
 # -------------------------------------------
 # Submitting Your Work
@@ -39,8 +42,6 @@ print("-------------------------------------------\n"
 #    git commit -m "Completed task 1"
 #    git push origin main
 # -------------------------------------------
-
-
 # Task 2: Grade Feedback
 # -------------------------------------------
 print("-------------------------------------------\n"
@@ -59,6 +60,13 @@ print("-------------------------------------------\n"
 #
 # Write your code below:
 
+test = int(input("Enter the test score: "))
+if test >= 70:
+    print(f"{test} is Excellent!")
+elif test <= 49:
+    print(f"{test} this Needs Improvement.")
+else:
+    print(f"{test} this is a Good Effort")
 
 # -------------------------------------------
 # Submitting Your Work
@@ -71,13 +79,11 @@ print("-------------------------------------------\n"
 #    git commit -m "Completed task 2"
 #    git push origin main
 # -------------------------------------------
-
-
 # Task 3: Countdown with While Loop
 # -------------------------------------------
 print("-------------------------------------------\n"
-    + "Task 3: Countdown with While Loop\n"
-    + "-------------------------------------------")
+     + "Task 3: Countdown with While Loop\n"
+     + "-------------------------------------------")
 # TODO:
 # 1. Ask the user for a starting number.
 # 2. Use a while loop to count down to 1.
@@ -96,6 +102,11 @@ print("-------------------------------------------\n"
 #
 # Write your code below:
 
+num = int(input("Choose a starting number: "))
+while num > 0:
+    print(num)
+    num = num - 1
+print("Lift off!")
 
 # -------------------------------------------
 # Submitting Your Work
@@ -108,8 +119,6 @@ print("-------------------------------------------\n"
 #    git commit -m "Completed task 3"
 #    git push origin main
 # -------------------------------------------
-
-
 # Task 4: Multiplication Table
 # -------------------------------------------
 print("-------------------------------------------\n"
@@ -130,6 +139,9 @@ print("-------------------------------------------\n"
 #
 # Write your code below:
 
+num = int(input("Choose a whole number: "))
+for i in range(1, 11):
+    print(f"{num} x {i} =", num * i)
 
 # -------------------------------------------
 # Submitting Your Work
@@ -142,8 +154,6 @@ print("-------------------------------------------\n"
 #    git commit -m "Completed task 4"
 #    git push origin main
 # -------------------------------------------
-
-
 # Task 5: Number Guessing Game
 # -------------------------------------------
 print("-------------------------------------------\n"
@@ -166,7 +176,17 @@ print("-------------------------------------------\n"
 #
 # Write your code below:
 
-
+secret_num = 9
+guess = int(input("Guess the number: "))
+while guess != secret_num:
+    if guess > secret_num:
+        print("Too high!") 
+        guess = int(input("Try again: "))
+    elif guess < secret_num:
+        print("Too low!")
+        guess = int(input("Try again: "))
+print("Correct!")
+        
 # -------------------------------------------
 # Submitting Your Work
 # -------------------------------------------
@@ -178,12 +198,9 @@ print("-------------------------------------------\n"
 #    git commit -m "Completed task 5"
 #    git push origin main
 # -------------------------------------------
-
-
 # -------------------------------------------
 # EXTENSION ACTIVITIES
 # -------------------------------------------
-
 # Extension 1:
 # -------------------------------------------
 print("-------------------------------------------\n"
@@ -201,9 +218,19 @@ print("-------------------------------------------\n"
 # Output: The total is 19
 #
 # Write your code below:
+# I'm sure there must be an easier way to do this but I couldn't make it work any other way! I understood
+# it was something to do with a FOR loop because we had a set amount of numbers but I couldn't figure out
+# how to get a loop for inputs and where to store them. I thought that they could probably go into a list
+# but I couldn't make that work! So I ended up with this really ugly & repetitive method!
 
-
-
+for i in range(1,6): 
+    num_1 = int(input("Enter number 1: "))
+    num_2 = int(input("Enter number 2: "))
+    num_3 = int(input("Enter number 3: "))
+    num_4 = int(input("Enter number 4: "))
+    num_5 = int(input("Enter number 5: "))
+    print("The total is:", num_1+num_2+num_3+num_4+num_5)
+    break
 
 # Extension 2:
 # -------------------------------------------
@@ -223,15 +250,19 @@ print("-------------------------------------------\n"
 #
 # Write your code below:
 
-
-
+password = "python123"
+attempt = input("Enter password: ")
+while attempt != password:
+    print("Incorrect, try again.")
+    attempt = input("Enter password: ")
+print("Access granted!")
 
 # -------------------------------------------
 # ADVANCED ACTIVITY
 # -------------------------------------------
 print("-------------------------------------------\n"
-    + "ADVANCED ACTIVITY\n"
-    + "-------------------------------------------")
+     + "ADVANCED ACTIVITY\n"
+     + "-------------------------------------------")
 # This is an optional challenge for extra practice.
 #
 # Build a simple menu-driven program:
@@ -252,8 +283,22 @@ print("-------------------------------------------\n"
 #
 # Write your code below:
 
+# I really struggled with this one. It seems once I specified and used a range in line 298 I couldnt
+# then use the print(*range(2,21,2)) in line 303 to give the even numbers up to 20? Is this because the
+# range had already been set in line 298? If it is how do I get it to reset so I can use range again?
 
-
+menu = ["Menu:", "1. Count to 10", "2. Show even numbers", "3. Exit"]
+print(*menu,sep='\n')
+num = int(input("Select an option: "))
+while num != 3:
+    if num == 1:
+        print(*range(1,11)) 
+        print(*menu,sep='\n')
+        num = int(input("Select an option: "))
+    elif num == 2:
+        print("2 4 6 8 10 12 14 16 18 20")
+        print(*menu,sep='\n')
+        num = int(input("Select an option: "))
 
 # -------------------------------------------
 # Submitting Your Work
